@@ -36,10 +36,9 @@ void sensorPin1Event() {//控制溫度(可變電阻)事件
 
 void sensorPin2Event() {//熱床溫度(感溫電阻)事件
   
-  //sensorValue2 = map(analogRead(sensorPin2),0,1023,0,99);
-  float RT=100*((1023/analogRead(sensorPin2))-1);
+  sensorValue2 = analogRead(sensorPin2)*0.048828125;
   //sensorValue2=RT;
-  sensorValue2=map(RT,3.186,11093.8,-55,125);
+  //sensorValue2=map(RT,3.186,11093.8,-55,125);
   //Serial.println("Bed="+String(sensorValue2));
   
   delay(100);
